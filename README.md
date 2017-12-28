@@ -1,4 +1,4 @@
-<h1 align="center">Easy Tips</h1>
+<h1 align="center">Skill Structure</h1>
 
 <p align="center">
 <a href="https://github.com/TIGERB/easy-tips#目录">
