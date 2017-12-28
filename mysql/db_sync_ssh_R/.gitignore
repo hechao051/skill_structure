@@ -1,0 +1,8 @@
+/soft/*.msi
+/soft/*.zip
+/soft/*.exe
+
+/ssh_keys/private*
+/ssh_keys/*.ppk
+
+

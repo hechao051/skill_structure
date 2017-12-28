@@ -1,0 +1,9 @@
+putty http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+
+hstart http://www.ntwind.com/software/hstart.html
+
+AlwaysUp http://www.coretechnologies.com/products/AlwaysUp/
+
+mysql http://dev.mysql.com/downloads/mysql/5.5.html#downloads
+
+
