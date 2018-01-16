@@ -157,7 +157,11 @@ SELECT *
 FROM `destination_table_name`;
 ```
 
----
+7. 嵌套查询 (子查询)
+```
+  场景： 统计一个学校所有班级(classes)的学生(students) 考试成绩(score)总分
+  select count(score) from (select count(score) from students where group by classes) as a
+```
 
 ### 附录：mysql常用命令
 - 登陆： mysql -h host -u username -p

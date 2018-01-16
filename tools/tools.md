@@ -19,3 +19,19 @@
 ### [学习阮一峰的WebSocket](https://segmentfault.com/a/1190000009585758);
 ### [MongoDB] (https://www.mongodb.com/cn);
 ### [swoole] (https://www.swoole.com/);
+### [看云]　(https://www.kancloud.cn/amehime/laravel-note/457348);
+
+###微信 手机端模拟测试
+```
+    NW.js
+        （原名 node-webkit）是一个基于 Chromium（chrome 的beta版） 和node.js库 的应用开发工具。
+        可以使用自己的微信号登陆来测试微信上的网页，模拟SDK的输入输出，方便调试。
+    下载:
+        (SDK Linux 64-bit) http://nwjs.io/downloads/
+    解压:
+        然后将package.nw 复制到 解压的目录下
+    启动:
+        ./nw
+
+    参考: http://nwjs.io/blog/v0.13.0/
+```

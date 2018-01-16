@@ -12,6 +12,12 @@
 - 不可重复读：一个事务内连续读了两次数据，中间另一个事务修改了这个数据，导致第一个事务前后两次读的数据不一致；
 - 更新丢失：一个事务内变更了数据，另一个事务修改了这个数据，最后前一个事务commit导致另一个事务的变更丢失；
 
+ ###mysql 表锁（案例１）
+    "Waiting for table metadata lock"
+    -> show processlist
+    [StateInfo]
+        Waiting for table metadata lock | CREATE TABLE IF NOT EXISTS LogEntries lid  INT NOT NULL AUTO_INCREMEN
+    [解决办法] kill 该锁进程
 
 ### 索引
 
