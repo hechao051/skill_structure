@@ -71,7 +71,28 @@ git remote update origin --prune // 同步更新远程分支
 ```
   eg: git add -f App.class
   .gitignore写得有问题，需要找出来到底哪个规则写错了，可以用git check-ignore命令检查
+
   git check-ignore -v App.class
+```
+
+###强制删除已上传的敏感文件（不留历史记录）
+```
+>参考:https://help.github.com/articles/removing-sensitive-data-from-a-repository/
+
+1:
+  git filter-branch --force --index-filter \
+  'git rm --cached --ignore-unmatch questions/my_questions' \
+  --prune-empty --tag-name-filter cat -- --all
+
+2:
+  添加忽略
+  echo "YOUR-FILE-WITH-SENSITIVE-DATA" >> .gitignore
+  git add .gitignore
+  git commit -m "Add YOUR-FILE-WITH-SENSITIVE-DATA to .gitignore"
+
+3:
+  git push origin --force --all
+  git push origin --force --tags
 ```
 ###设置别名
 ```
