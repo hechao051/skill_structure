@@ -35,3 +35,25 @@
 
     参考: http://nwjs.io/blog/v0.13.0/
 ```
+
+###OSS 浏览文件工具
+    启动
+    ~> oss-browser
+
+###微信客户端(LINUX)
+    ubuntu 14.04 亲测
+    https://github.com/geeeeeeeeek/electronic-wechat
+
+###mongodb 客户端工具
+    ~> robo3t
+
+
+###翻墙
+	https://duotai.love/dashboard
+	https://duotai.love/register
+	需要邀请码, 然后按照教程配置
+	B161-BD5A-B3D0-CC
+
+	1326943544@qq.com
+	106156hechao
+

@@ -51,6 +51,12 @@ Git 使用 http://rogerdudler.github.io
   3.显示历史记录时,每个提交信息只显示一行 : git config format.pretty oneline
   4.交互式添加文件到暂存区 : git add -i
 ```
+
+###删除远程分支
+```
+git push origin --delete branch-name // 删除
+git remote update origin --prune // 同步更新远程分支
+```
 ###多人协作:
 ```
   查看远程库信息，使用git remote -v；
@@ -73,6 +79,7 @@ Git 使用 http://rogerdudler.github.io
   $ git config --global alias.co checkout
   $ git config --global alias.ci commit
   $ git config --global alias.br branch
+  $ git config --global core.editor vim // 配置 git shell 编辑器为vim 或者在　.git/config 文件 [core]中添加 editor=vim
 ```
 ###搭建Git服务器
 sudo权限的用户账号
