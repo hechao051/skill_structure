@@ -31,6 +31,9 @@
 4: 系统设置>语言支持>键盘输入方式系统->选择 fcitx 项
     参考: http://jingyan.baidu.com/article/08b6a591cb06f114a8092209.html
 
+5: 代理
+    https://github.com/shadowsocks/shadowsocks-qt5
+
 #系统更新
 1、更换源
     $ sudo -i
@@ -45,3 +48,31 @@
     W: GPG 错误：http://ppa.launchpad.net precise Release: 由于没有公钥，无法验证下列签名： NO_PUBKEY 32B18A1260D8DA0B // "32B18A1260D8DA0B"就是缺失的签名(公钥)
 3. 添加签名
     sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com ××××××××(有多个签名需要更新使用空格分离即可)
+
+
+
+###添加交换分区
+
+查看磁盘使用情况
+df -h
+
+查看那内存使用情况
+free
+
+sudo fallocate -l 4G /swapfile
+
+启用Swap分区文件
+
+更改下 swapfile 文件的权限
+sudo chmod 600 /swapfile
+
+swapfile 初始化为交换文件
+sudo mkswap /swapfile
+
+启用交换文件
+sudo swapon /swapfile
+
+配置启动时挂载Swap分区文件
+vi 或 nano 在 /etc/fstab 文件底部添加如下内容
+/swapfile none swap sw 0 0
+

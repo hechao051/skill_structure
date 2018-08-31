@@ -44,3 +44,10 @@ $res = $redis->lrange('QUEUE_NAME', 0, 1000);
 echo "当前队列数据为： \n";
 echo "The queue's data are： \n";
 print_r($res);
+
+
+https://www.jianshu.com/p/afbfc784238a
+
+http://easyswoole.com/wstool.html
+https://wiki.swoole.com/wiki/page/p-tcpdump.html
+https://wiki.swoole.com/wiki/page/p-server.html

@@ -1,4 +1,4 @@
-Git 使用 http://rogerdudler.github.io
+Git 使用 https://git-scm.com/
 
 1.git init 创建新文件夹,打开,然后执行,git init 以创建新的git库
 
@@ -17,54 +17,50 @@ Git 使用 http://rogerdudler.github.io
   提交到远程仓库: git push origin master(任何分支名)
   如果还没有克隆现有仓库并欲将你的仓库连接到某个远程服务器:git remote add origin <server>
 ```
-5.分支
+###5.分支
 ```
   分支是用来将特性开发绝缘开来的。在你创建仓库的时候 master是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。 
   1.穿件一个叫”featur_x”的分支,并切换过去 : git checkout -b featur_x
   2.切换回分支 : git checkout master
   3.删除新建分支 : git branch -d featur_x
-  4.除非你将分支推送到远程仓库,不然该分支是不为他人所见的 : git push origin <branch> 
+  4.除非你将分支推送到远程仓库,不然该分支是不为他人所见的 : git push origin <branch>
+  5.来显式地获得远程引用的完整列表 git ls-remote (remote)
 ```
-6.更新与合并
+###6.更新与合并
 ```
   1.跟新本地仓库为最新改动 : git pull
   2.要合并其他分支到你当前分支 : git merge <branch>
   3.改完之后将它们标记为合并成功 : git add <filename>
   4.在合并之前预览差异 : git diff <source_branch><targe_branch>
+  5.预览当前分支和branch1 的差异文件: git diff --stat branch1
+  5.这两个有用的选项可以过滤这个列表中已经合并或尚未合并到当前分支的分支 : git branch --merged 与 --no-merged
 ```
-7.标签
+###7.标签
 ```
   1.创建标签 : git tag 1.0.0 1b2e1d63ff   1b2e1d63ff是你想标记的提交ID的前10位字符
   2.获取提交ID : git log
 ```
-8.替换本地的改动
+###8.替换本地的改动
 ```
   1.加入操作失误,换掉本地改动 : git checkout --<filename>
-  2.假如想丢掉在本地的所有改动与提交可以到服务器上获取最新的版本历史并将你本地主分支指向它 : 
+  2.假如想丢掉在本地的所有改动与提交可以到服务器上获取最新的版本历史并将你本地主分支指向它 :
     git fetch origin
     git reset –hard origin/master
 ```
-###9.实用贴士
-```
-  1.图形话git : gitk
-  2.彩色的 git输出 : git config color.ui true
-  3.显示历史记录时,每个提交信息只显示一行 : git config format.pretty oneline
-  4.交互式添加文件到暂存区 : git add -i
-```
 
-###删除远程分支
+###9.删除远程分支
 ```
 git push origin --delete branch-name // 删除
 git remote update origin --prune // 同步更新远程分支
 ```
-###多人协作:
+###10.多人协作:
 ```
   查看远程库信息，使用git remote -v；
   本地新建的分支如果不推送到远程，对其他人就是不可见的；
-  从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+  从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull拉取远程的新提交；
   在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
   建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
-  从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+  从远程拉取分支，使用git pull，如果有冲突，要先处理冲突。
 ```
 
 ###你确实想添加该文件，可以用-f强制添加到Git
@@ -79,18 +75,18 @@ git remote update origin --prune // 同步更新远程分支
 ```
 >参考:https://help.github.com/articles/removing-sensitive-data-from-a-repository/
 
-1:
+方式1:
   git filter-branch --force --index-filter \
   'git rm --cached --ignore-unmatch questions/my_questions' \
   --prune-empty --tag-name-filter cat -- --all
 
-2:
+方式2:
   添加忽略
   echo "YOUR-FILE-WITH-SENSITIVE-DATA" >> .gitignore
   git add .gitignore
   git commit -m "Add YOUR-FILE-WITH-SENSITIVE-DATA to .gitignore"
 
-3:
+方式3:
   git push origin --force --all
   git push origin --force --tags
 ```
@@ -137,3 +133,63 @@ sudo权限的用户账号
 ```
 ###GIT 控制权限，用Gitolite
   https://github.com/sitaramc/gitolite
+###GIT　图形化
+```
+  1.图形话git : gitk
+  2.彩色的 git输出 : git config color.ui true
+  3.显示历史记录时,每个提交信息只显示一行 : git config format.pretty oneline
+  4.交互式添加文件到暂存区 : git add -i
+```
+
+
+###GIT FLOW
+参考: http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html
+
+介绍: Git-flow 是Vincent Driessen提出来的分支模型　Git一组扩展
+优点: 提供友好的一组命令
+    　OSX/Windows 提供图形界面客户端 Sourcetree
+    　分支合并的解决方案
+缺点: 命令太长（可以自行重命名）
+
+安装：
+```
+OSX
+Homebrew
+$ brew install git-flow-avh
+Macports
+$ port install git-flow-avh
+Linux
+$ apt-get install git-flow
+Windows (Cygwin)
+$ wget -q -O - --no-check-certificate https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh install stable | bash
+
+git flow 初始化
+git flow init // 它是否已经包括了一个 Git 仓库并不重要
+```
+
+```
+创建 feature
+git flow feature start name1
+发布新分支　feature
+git flow feature publish name1
+获取　feature
+git flow feature pull origin name1
+完成 feature
+git flow feature finish name1
+切换分支　feature
+git flow feature checkout name2
+
+其他分支命名
+创建 Hotfixes
+git flow hotfix start name1
+完成 Hotfixes
+git flow hotfix start name1
+
+帮助方法
+git flow feature help
+```
+
+``` TODO
+https://backlog.com/git-tutorial/cn/stepup/stepup3_2.html
+https://github.com/flyhigher139/Git-Cheat-Sheet
+```

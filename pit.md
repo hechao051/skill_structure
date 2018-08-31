@@ -141,3 +141,6 @@ echo json_encode($arr);
 
 ###### PHP的不足
 - PHP还是有很多不足的地方，比如无法进行高效的运算
+
+#####防止解压乱码
+unzip -O CP936 xxx.zip

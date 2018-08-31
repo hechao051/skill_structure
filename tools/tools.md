@@ -19,6 +19,7 @@
 ### [学习阮一峰的WebSocket](https://segmentfault.com/a/1190000009585758);
 ### [MongoDB] (https://www.mongodb.com/cn);
 ### [swoole] (https://www.swoole.com/);
+### [php resque] (https://github.com/chrisboulton/php-resque);  Workers and Queueing
 ### [看云]　(https://www.kancloud.cn/amehime/laravel-note/457348);
 
 ###微信 手机端模拟测试
@@ -57,3 +58,44 @@
 	1326943544@qq.com
 	106156hechao
 
+
+###抓包工具
+	sudo aptitude install wireshark
+	安装以后，打开软件后，在选择网络接口进行抓包时会提示没有权限，为此，可以通过以下方法解决。
+
+	# 添加用户组，命名为wireshark
+	sudo groupadd wireshark
+	# 将dumpcap更改为刚添加的用户组
+	sudo chgrp wireshark /usr/bin/dumpcap
+	# 为wireshark用户组添加使用dumpcap的root权限
+	sudo chmod 4755 /usr/bin/dumpcap
+	# 将自己的用户(本人litreily)添加到wireshark用户组
+	sudo gpasswd -a litreily wireshark
+
+###文档工具
+https://www.gitbook.com/join
+
+直播相关文档:
+https://segmentfault.com/a/1190000009892006#articleHeader15
+
+###pm2
+http://pm2.keymetrics.io/
+
+###swoole
+https://www.swoole.com/
+
+###easyswoole
+https://www.easyswoole.com/Manual/2.x/Cn/_book/Introduction/environment.html
+
+###wstool
+http://easyswoole.com/wstool.html
+
+###gitbook
+https://www.gitbook.com
+http://easyswoole.com/wstool.html
+
+###leelCode
+https://leetcode-cn.com/explore/
+
+###在线做图, 实时协作
+https://www.processon.com

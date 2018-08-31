@@ -195,3 +195,7 @@ Specify the Recommended ulimit Settings, as in the following example:
 导数据
 mongoimport --db test --collection zips --file zips.json --drop
 mongoimport --db test --collection restaurants --file primer-dataset.json --drop
+
+
+
+
