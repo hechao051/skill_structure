@@ -1,0 +1,25 @@
+# RSA服务端与客户端加密解密用
+
+## 服务端使用私钥加密，解密
+## 客户端使用公钥加密，解密
+## ios 参考：https://www.jianshu.com/p/eaaf93a6cc9c
+## android 参考 https://www.jianshu.com/p/7841eae98d16
+
+## 测试接口
+- 获取加密后的数据 ：http://wgytest.lzf.com/api/test/testEncrypt     解密后数据为{"name":"zhangsan","sex":"男"}
+参数:无
+返回：加密数据  解密后数据为{"name":"zhangsan","sex":"男"}
+
+- 提交加密参数结果 ： http://wgytest.lzf.com/api/test/testDecrypt  
+参数：data 值：josn 加密后的字符串
+返回：加密前的数据
+
+
+## 需要加密的接口：
+- 用户注册      --何超
+- 用户登录      --何超
+- 绑定手机      -- 何超
+- 提币的安全验证  -- 何超
+- 绑定邮箱        -- 何超
+- 绑定谷歌验证码，谷歌验证码验证  --陈凯
+

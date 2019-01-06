@@ -171,7 +171,7 @@ sudo supervisorctl start demo
 whereis 文件名
 
 29. 抓包
-# -c表明抓多少个包就停止，可以缺省
+# -c表明抓多少个包 file size
 # -i指定网络设备
 # host 指定ip地址
 # port 指定端口
